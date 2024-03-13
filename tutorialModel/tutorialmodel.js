@@ -27,7 +27,7 @@ const userSchema = new mongoose.Schema({
         require: [true, "please comfirm your password"],
         validate: {
             // this validitor only works for save() and create()
-            validator: function(val) {
+            validator: function  (val) {
              return   val == this.password
             },
             message:`password and comfirm password does not match`
@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
 
 userSchema.pre('save', async function (next) {
     // check if the password was modified or updated
-    if (!this.isModified('password')) return next() 
+    if  (!this.isModified('password')) return next() 
         //encrypt the password
     this.password = await bcrypt.hash(this.password, 10)
     // after comfirming the comfirm password, next not saving it

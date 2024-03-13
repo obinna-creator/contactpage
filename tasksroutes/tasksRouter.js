@@ -5,7 +5,7 @@ const {authenticate}= require("../taskAuth")
 
 const router = express.Router()
 
-router.post("/create", authenticate, createPost)
+router.post("/create", createPost)
 router.get("/getOne", authenticate, getone)
 router.get("/getAll", authenticate, getalltasks)
 router.put("/updateTaksk", authenticate,  updatetask )

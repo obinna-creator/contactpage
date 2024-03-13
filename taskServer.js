@@ -1,7 +1,7 @@
 const express= require("express")
 const onboarding = require("./onboardingRouter/onboarding")
 const tasksRouter = require("./tasksroutes/tasksRouter")
-const statusroutes = require("./tasksroutes/statusroutes")
+const statusroutes = require ("./tasksroutes/statusroutes")
 const  subtaskroutes= require("./tasksroutes/subtaskroutes")
 require('./config')
 const app = express()

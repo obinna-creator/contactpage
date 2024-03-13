@@ -1,4 +1,4 @@
-const onboardingmodel= require("../onboardingModel/onboardingmodel")
+const onboardingmodel= require ("../onboardingModel/onboardingmodel")
 const tasksMode = require('../tasksmodel/tasksMode')
 const statusModel= require('../tasksmodel/statusModel')
 
@@ -6,7 +6,7 @@ const statusModel= require('../tasksmodel/statusModel')
 
 exports.createPost = async (req, res) => {
     try {
-        const id = req.params.statusId
+        const id = req.params.id
         const{title, description , userId}=req.body
         const status = await statusModel.findById(id)
         const user= await onboardingmodel.findById(userId)
