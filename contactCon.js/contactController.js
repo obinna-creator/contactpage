@@ -46,3 +46,18 @@ exports.submitContactForm = async (req, res) => {
         });
     }
 };
+
+exports.getContactMessages = async (req, res) => {
+    try {
+        // Fetch all contact messages from the database
+        const contactMessages = await Contact.find();
+
+        // Send the fetched contact messages as a response
+        res.status(200).json(contactMessages);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).json({
+            message: 'Error fetching contact messages'
+        });
+    }
+};
